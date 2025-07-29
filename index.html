@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Heart Health Predictor</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Made by Khalid attribution -->
+        <div class="made-by">
+            <span>made by khalid</span>
+            <i class="fas fa-heart"></i>
+        </div>
+        
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>Hearty AI</span>
+                </div>
+                <p class="tagline">Advanced Heart Health Prediction</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Know Your Heart Health</h1>
+                    <p class="hero-subtitle">Get instant AI-powered insights about your cardiovascular health</p>
+                    <div class="hero-icon">
+                        <i class="fas fa-heart pulse"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Input Form -->
+            <section class="form-section">
+                <div class="form-container">
+                    <h2 class="form-title">Health Assessment</h2>
+                    <form id="healthForm" class="health-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="Age">Age</label>
+                                <input type="number" id="Age" name="Age" min="1" max="120" required>
+                                <span class="input-icon"><i class="fas fa-calendar-alt"></i></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Sex">Sex</label>
+                                <select id="Sex" name="Sex" required>
+                                    <option value="">Select...</option>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                                <span class="input-icon"><i class="fas fa-user"></i></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ChestPainType">Chest Pain Type</label>
+                                <select id="ChestPainType" name="ChestPainType" required>
+                                    <option value="">Select...</option>
+                                    <option value="TA">Typical Angina</option>
+                                    <option value="ATA">Atypical Angina</option>
+                                    <option value="NAP">Non-Anginal Pain</option>
+                                    <option value="ASY">Asymptomatic</option>
+                                </select>
+                                <span class="input-icon"><i class="fas fa-stethoscope"></i></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="RestingBP">Resting Blood Pressure</label>
+                                <input type="number" id="RestingBP" name="RestingBP" min="80" max="200" placeholder="120" required>
+                                <span class="input-icon"><i class="fas fa-tachometer-alt"></i></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Cholesterol">Cholesterol Level</label>
+                                <input type="number" id="Cholesterol" name="Cholesterol" min="100" max="600" placeholder="200" required>
+                                <span class="input-icon"><i class="fas fa-vial"></i></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="FastingBS">Fasting Blood Sugar > 120 mg/dl</label>
+                                <select id="FastingBS" name="FastingBS" required>
+                                    <option value="">Select...</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                                <span class="input-icon"><i class="fas fa-cube"></i></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="RestingECG">Resting ECG Results</label>
+                                <select id="RestingECG" name="RestingECG" required>
+                                    <option value="">Select...</option>
+                                    <option value="Normal">Normal</option>
+                                    <option value="ST">ST-T wave abnormality</option>
+                                    <option value="LVH">Left ventricular hypertrophy</option>
+                                </select>
+                                <span class="input-icon"><i class="fas fa-chart-line"></i></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="MaxHR">Maximum Heart Rate</label>
+                                <input type="number" id="MaxHR" name="MaxHR" min="60" max="220" placeholder="150" required>
+                                <span class="input-icon"><i class="fas fa-heartbeat"></i></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ExerciseAngina">Exercise Induced Angina</label>
+                                <select id="ExerciseAngina" name="ExerciseAngina" required>
+                                    <option value="">Select...</option>
+                                    <option value="Y">Yes</option>
+                                    <option value="N">No</option>
+                                </select>
+                                <span class="input-icon"><i class="fas fa-running"></i></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="Oldpeak">ST Depression (Oldpeak in mm)</label>
+                                <input type="number" id="Oldpeak" name="Oldpeak" min="0" max="10" step="0.1" placeholder="1.0" required>
+                                <span class="input-icon"><i class="fas fa-wave-square"></i></span>
+                                <div class="field-hint">ECG measurement during exercise test (0-6 mm typical)</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ST_Slope">ST Slope</label>
+                                <select id="ST_Slope" name="ST_Slope" required>
+                                    <option value="">Select...</option>
+                                    <option value="Up">Upsloping</option>
+                                    <option value="Flat">Flat</option>
+                                    <option value="Down">Downsloping</option>
+                                </select>
+                                <span class="input-icon"><i class="fas fa-chart-area"></i></span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Analyze Heart Health</span>
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-container">
+                    <div class="result-card" id="resultCard">
+                        <div class="result-header">
+                            <div class="result-icon" id="resultIcon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3 class="result-title" id="resultTitle">Analysis Complete</h3>
+                        </div>
+                        <div class="result-content">
+                            <div class="risk-meter">
+                                <div class="meter-container">
+                                    <div class="meter-fill" id="meterFill"></div>
+                                    <div class="meter-text" id="meterText">0%</div>
+                                </div>
+                            </div>
+                            <p class="result-description" id="resultDescription"></p>
+                            <div class="recommendations" id="recommendations">
+                                <h4>Recommendations:</h4>
+                                <ul id="recommendationsList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Hearty AI. For educational purposes only.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
